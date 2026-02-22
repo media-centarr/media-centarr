@@ -347,6 +347,19 @@ defmodule MediaManager.ParserTest do
       assert result.episode == 5
       assert result.type == :tv
     end
+
+    test "Scrubs: NxNN format (7x02) inside Season directory" do
+      result =
+        Parser.parse(
+          "/home/shawn/videos/media-library/Scrubs/Season 7/Scrubs 7x02 - My Hard Labor.avi"
+        )
+
+      assert result.title == "Scrubs"
+      assert result.season == 7
+      assert result.episode == 2
+      assert result.episode_title == "My Hard Labor"
+      assert result.type == :tv
+    end
   end
 
   describe "tv — episode file inside show+season directory (show name in file)" do
