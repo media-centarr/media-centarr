@@ -440,6 +440,20 @@ defmodule MediaCentaur.ParserTest do
       assert result.type == :tv
     end
 
+    test "Babylon 5: remaster year in grandparent directory is not the premiere year" do
+      result =
+        Parser.parse(
+          "/home/shawn/videos/media-library/Babylon 5 S01-05 1080p ( 2021 Remaster ) DD51 x265/B5 S01 1080p x265/Babylon.5.S01e01.Midnight.On.The.Firing.Line.1080P.DD.5.1.X256.mkv"
+        )
+
+      assert result.title == "Babylon 5"
+      assert result.year == nil
+      assert result.season == 1
+      assert result.episode == 1
+      assert result.episode_title == "Midnight On The Firing Line"
+      assert result.type == :tv
+    end
+
     test "Nettare degli Dei: non-English title" do
       result =
         Parser.parse(
