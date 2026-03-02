@@ -208,6 +208,33 @@ defmodule MediaCentaur.Pipeline.Stages.SearchTest do
       assert {:needs_review, _result} = Search.run(payload)
     end
 
+    test "tied TV shows with matching year auto-approves first result" do
+      stub_search_tv([
+        tv_search_result(%{
+          "id" => 90_282,
+          "name" => "The Morning Show",
+          "first_air_date" => "2019-11-01"
+        }),
+        tv_search_result(%{
+          "id" => 1230,
+          "name" => "The Morning Show",
+          "first_air_date" => "2019-06-18"
+        })
+      ])
+
+      payload =
+        payload_with_parsed(%{
+          title: "The Morning Show",
+          year: 2019,
+          type: :tv,
+          season: 2,
+          episode: 5
+        })
+
+      assert {:ok, result} = Search.run(payload)
+      assert result.tmdb_id == 90_282
+    end
+
     test "tied TV shows with no year still go to review" do
       stub_search_tv([
         tv_search_result(%{

@@ -433,6 +433,7 @@ defmodule MediaCentaur.ParserTest do
         )
 
       assert result.title == "The Morning Show"
+      assert result.year == 2019
       assert result.season == 2
       assert result.episode == 1
       assert result.episode_title == "My Least Favorite Year"
