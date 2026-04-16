@@ -176,7 +176,7 @@ defmodule MediaCentarr.Pipeline.Stages.SearchTest do
           "release_date" => "2022-09-23"
         }),
         movie_search_result(%{
-          "id" => 45824,
+          "id" => 45_824,
           "title" => "Smile",
           "release_date" => "2005-01-01"
         })

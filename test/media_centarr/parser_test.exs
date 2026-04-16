@@ -14,9 +14,7 @@ defmodule MediaCentarr.ParserTest do
   describe "movie — dot-separated filename" do
     test "simple title + year + quality tags" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/Hot.Shots.1991.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi.mkv"
-        )
+        Parser.parse("/mnt/videos/Videos/Hot.Shots.1991.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi.mkv")
 
       assert result.title == "Hot Shots"
       assert result.year == 1991
@@ -89,9 +87,7 @@ defmodule MediaCentarr.ParserTest do
 
     test "Playtime as directory name (no extension)" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/Playtime.1967.Criterion.1080p.BluRay.x265.HEVC.EAC3-SARTRE"
-        )
+        Parser.parse("/mnt/videos/Videos/Playtime.1967.Criterion.1080p.BluRay.x265.HEVC.EAC3-SARTRE")
 
       assert result.title == "Playtime"
       assert result.year == 1967
@@ -115,9 +111,7 @@ defmodule MediaCentarr.ParserTest do
 
     test "single word title spaces" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/Little Trouble Girls.2025.1080p.WEB-DL.AAC.x264-skyflickz.mp4"
-        )
+        Parser.parse("/mnt/videos/Videos/Little Trouble Girls.2025.1080p.WEB-DL.AAC.x264-skyflickz.mp4")
 
       assert result.title == "Little Trouble Girls"
       assert result.year == 2025
@@ -361,9 +355,7 @@ defmodule MediaCentarr.ParserTest do
 
     test "Scrubs: NxNN format (7x02) inside Season directory" do
       result =
-        Parser.parse(
-          "/home/shawn/videos/media-library/Scrubs/Season 7/Scrubs 7x02 - My Hard Labor.avi"
-        )
+        Parser.parse("/home/shawn/videos/media-library/Scrubs/Season 7/Scrubs 7x02 - My Hard Labor.avi")
 
       assert result.title == "Scrubs"
       assert result.season == 7
@@ -503,9 +495,7 @@ defmodule MediaCentarr.ParserTest do
   describe "tv — season pack directory (no episode)" do
     test "dot-separated season pack" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/Shoresy.S01.COMPLETE.720p.HULU.WEBRip.x264-GalaxyTV[TGx]"
-        )
+        Parser.parse("/mnt/videos/Videos/Shoresy.S01.COMPLETE.720p.HULU.WEBRip.x264-GalaxyTV[TGx]")
 
       assert result.title == "Shoresy"
       assert result.season == 1
@@ -515,9 +505,7 @@ defmodule MediaCentarr.ParserTest do
 
     test "Young Sheldon season pack" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/Young.Sheldon.S01.COMPLETE.720p.BluRay.x264-GalaxyTV[TGx]"
-        )
+        Parser.parse("/mnt/videos/Videos/Young.Sheldon.S01.COMPLETE.720p.BluRay.x264-GalaxyTV[TGx]")
 
       assert result.title == "Young Sheldon"
       assert result.season == 1
@@ -663,9 +651,7 @@ defmodule MediaCentarr.ParserTest do
 
     test "Layout A with S-prefix: Show (2022)/S02/Extras/file.mkv" do
       result =
-        Parser.parse(
-          "/mnt/videos/Videos/House of the Dragon (2022)/S02/Extras/Inside the Episode.mkv"
-        )
+        Parser.parse("/mnt/videos/Videos/House of the Dragon (2022)/S02/Extras/Inside the Episode.mkv")
 
       assert result.type == :extra
       assert result.season == 2

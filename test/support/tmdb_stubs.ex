@@ -189,7 +189,7 @@ defmodule MediaCentarr.TmdbStubs do
         "parts" => [
           %{"id" => 272, "title" => "Batman Begins"},
           %{"id" => 155, "title" => "The Dark Knight"},
-          %{"id" => 49026, "title" => "The Dark Knight Rises"}
+          %{"id" => 49_026, "title" => "The Dark Knight Rises"}
         ],
         "images" => %{"logos" => []}
       },
