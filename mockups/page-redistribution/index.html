@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page redistribution mockups — Media Centarr</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    body { padding: 2rem; }
+    .index-page { max-width: 78rem; margin: 0 auto; }
+    .lede { font-size: 1.0625rem; color: oklch(from var(--color-base-content) l c h / 0.7); max-width: 56rem; line-height: 1.6; margin-top: 0.75rem; }
+    .group-h {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: oklch(from var(--color-base-content) l c h / 0.5);
+      margin: 2rem 0 0.875rem;
+    }
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      gap: 1rem;
+    }
+    .mockup-link {
+      display: block;
+      padding: 1.25rem;
+      border-radius: var(--radius-box);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .mockup-link:hover {
+      border-color: oklch(from var(--color-primary) l c h / 0.4);
+      transform: translateY(-2px);
+    }
+    .mockup-link h3 { margin: 0; font-size: 1.0625rem; font-weight: 600; }
+    .mockup-link .url { font-family: ui-monospace, monospace; font-size: 0.75rem; color: var(--color-primary); margin-top: 0.125rem; }
+    .mockup-link .desc { color: oklch(from var(--color-base-content) l c h / 0.6); font-size: 0.875rem; margin-top: 0.625rem; line-height: 1.5; }
+    .mockup-link .badge-list { margin-top: 0.75rem; display: flex; gap: 0.375rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <div class="index-page">
+
+    <header style="margin-bottom: 1rem;">
+      <h1 class="page-title">Page redistribution — visual mockups</h1>
+      <p class="lede">
+        Self-contained HTML mockups exploring a redistribution of pages and features
+        across the app. The driving observation: the current "Library" page does
+        three different jobs (Continue Watching, Browse, Upcoming) that pull in
+        three different mental directions. The proposal splits those into focused
+        single-purpose pages and reorganises the sidebar into <em>Watch</em> and
+        <em>System</em> groups — a content-first cinematic frontstage and an
+        operator backstage.
+      </p>
+      <p class="lede" style="margin-top: 0.75rem;">
+        Click any mockup below to see the full page. Each mockup includes the
+        proposed sidebar, so you can click between them. Each folder also has
+        a <code>REASONING.md</code> documenting the design decisions.
+      </p>
+    </header>
+
+    <div class="group-h">Start here</div>
+    <div class="mockup-grid">
+      <a class="mockup-link" href="nav-comparison/index.html">
+        <h3>Sidebar — current vs proposed</h3>
+        <div class="url">side-by-side</div>
+        <div class="desc">
+          The structural change at the heart of the proposal: two visually
+          distinct nav groups (Watch / System) instead of one flat list.
+        </div>
+        <div class="badge-list">
+          <span class="badge">Comparison</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="group-h">Watch — content-first frontstage</div>
+    <div class="mockup-grid">
+
+      <a class="mockup-link" href="home/index.html">
+        <h3>Home <span class="badge badge-primary" style="margin-left:0.5rem;">NEW</span></h3>
+        <div class="url">/</div>
+        <div class="desc">
+          New cinematic landing. Hero + Continue Watching + Coming Up This Week
+          + Recently Added + Watched Recently. Assembled from Library,
+          ReleaseTracking, and WatchHistory.
+        </div>
+        <div class="badge-list">
+          <span class="badge badge-success">New page</span>
+          <span class="badge">Hero · 4 rows</span>
+        </div>
+      </a>
+
+      <a class="mockup-link" href="library/index.html">
+        <h3>Library <span class="badge" style="margin-left:0.5rem;">REDUCED</span></h3>
+        <div class="url">/library</div>
+        <div class="desc">
+          Pure catalog browser. Type tabs, sort, filter, poster grid. No more
+          zones, no Continue, no Upcoming — just the catalog.
+        </div>
+        <div class="badge-list">
+          <span class="badge badge-warning">Stripped down</span>
+          <span class="badge">8-col grid</span>
+        </div>
+      </a>
+
+      <a class="mockup-link" href="upcoming/index.html">
+        <h3>Upcoming <span class="badge" style="margin-left:0.5rem;">PROMOTED</span></h3>
+        <div class="url">/upcoming</div>
+        <div class="desc">
+          Promoted from a zone of Library to its own page. Calendar + Tracking
+          sidebar + Active shows + Recent Changes + Unscheduled.
+        </div>
+        <div class="badge-list">
+          <span class="badge badge-info">Promoted route</span>
+          <span class="badge">Full canvas</span>
+        </div>
+      </a>
+
+      <a class="mockup-link" href="history/index.html">
+        <h3>History <span class="badge" style="margin-left:0.5rem;">PROMOTED</span></h3>
+        <div class="url">/history</div>
+        <div class="desc">
+          Promoted from a hidden URL to a primary nav link. Stat tiles, GitHub-
+          style heatmap, recent activity log.
+        </div>
+        <div class="badge-list">
+          <span class="badge badge-info">From hidden → nav</span>
+          <span class="badge">Stats + heatmap</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="group-h">System — operator backstage</div>
+    <div class="mockup-grid">
+      <a class="mockup-link" href="operate-pages/downloads.html">
+        <h3>Downloads</h3>
+        <div class="url">/download</div>
+        <div class="desc">
+          Active queue, activity log, manual Prowlarr search. Unchanged from
+          today — just clustered under the System group in the sidebar.
+        </div>
+        <div class="badge-list"><span class="badge">Unchanged</span></div>
+      </a>
+
+      <a class="mockup-link" href="operate-pages/review.html">
+        <h3>Review</h3>
+        <div class="url">/review</div>
+        <div class="desc">
+          Master/detail file-match remediation. Unchanged from today.
+        </div>
+        <div class="badge-list"><span class="badge">Unchanged</span></div>
+      </a>
+
+      <a class="mockup-link" href="operate-pages/status.html">
+        <h3>Status</h3>
+        <div class="url">/status</div>
+        <div class="desc">
+          Operator dashboard — library counts, pipeline, watcher, storage,
+          integrations, playback. Unchanged from today.
+        </div>
+        <div class="badge-list"><span class="badge">Unchanged</span></div>
+      </a>
+
+      <a class="mockup-link" href="operate-pages/settings.html">
+        <h3>Settings</h3>
+        <div class="url">/settings</div>
+        <div class="desc">
+          Sectioned settings editor. Unchanged from today.
+        </div>
+        <div class="badge-list"><span class="badge">Unchanged</span></div>
+      </a>
+    </div>
+
+    <div class="group-h">Reasoning</div>
+    <div class="mockup-grid">
+      <a class="mockup-link" href="REASONING.md">
+        <h3>Overall design rationale</h3>
+        <div class="url">REASONING.md</div>
+        <div class="desc">
+          The driving observation, the proposal in one paragraph, the trade-offs
+          across the whole IA. Each page also has its own REASONING.md.
+        </div>
+        <div class="badge-list"><span class="badge">Markdown</span></div>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
