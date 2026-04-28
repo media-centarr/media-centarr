@@ -67,7 +67,7 @@ Each watch directory has its own image cache. By default, images are stored at `
 ```
 /mnt/videos/.media-centarr/
 └── images/
-    ├── 550e8400-e29b-41d4-a716-446655440001/   # Blade Runner 2049 (entity)
+    ├── 550e8400-e29b-41d4-a716-446655440001/   # Sample Movie (entity)
     │   ├── poster.jpg
     │   └── backdrop.jpg
     ├── 660a1200-b33c-42e5-b819-557766550010/   # Child Movie (movie)
@@ -76,7 +76,7 @@ Each watch directory has its own image cache. By default, images are stored at `
 
 /mnt/nas/TV/.media-centarr/
 └── images/
-    ├── 550e8400-e29b-41d4-a716-446655440004/   # Breaking Bad (entity)
+    ├── 550e8400-e29b-41d4-a716-446655440004/   # Sample Show (entity)
     │   └── poster.jpg
     ├── 770b2300-c44d-53f6-c920-668877660020/   # S01E03 (episode)
     │   └── thumb.jpg

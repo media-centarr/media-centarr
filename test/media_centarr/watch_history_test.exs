@@ -140,7 +140,7 @@ defmodule MediaCentarr.WatchHistoryTest do
 
   describe "rewatch_count/2" do
     test "returns count for an entity with events" do
-      movie = TestFactory.create_movie(%{name: "Blade Runner"})
+      movie = TestFactory.create_movie(%{name: "Sample Movie"})
       for _ <- 1..3, do: TestFactory.create_watch_event(%{movie_id: movie.id, entity_type: :movie})
 
       assert WatchHistory.rewatch_count(:movie, movie.id) == 3

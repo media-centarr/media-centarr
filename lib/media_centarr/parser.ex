@@ -104,10 +104,10 @@ defmodule MediaCentarr.Parser do
   # SxxExx pattern — captures show name, season, episode, optional episode title
   @tv_pattern ~r/^(.+?)[.\s_-]*[Ss](\d{1,2})[Ee](\d{1,2})(?:-[Ee]?\d{1,2})?(?:[.\s_-]+(.+?))?$/i
 
-  # NxNN pattern — e.g. "Scrubs 7x02 - My Hard Labor"
+  # NxNN pattern — e.g. "Show Name 7x02 - Episode Title"
   @tv_nxnn_pattern ~r/^(.+?)[.\s_-]+(\d{1,2})x(\d{2,3})(?:[.\s_-]+(.+?))?$/i
 
-  # Spelled-out "Season N Episode N" pattern — e.g. "Shoresy (2022) Season 5 Episode 1- Keep It Simple"
+  # Spelled-out "Season N Episode N" pattern — e.g. "Show (2022) Season 5 Episode 1- Title"
   @tv_spelled_pattern ~r/^(.+?)\s*Season\s+(\d+)\s*Episode\s+(\d+)[.\s_-]*(.+)?$/i
 
   # Season-only pack pattern (no episode number)
@@ -329,7 +329,7 @@ defmodule MediaCentarr.Parser do
 
     cond do
       # File is inside a "Season N" or "S01" directory → use grandparent (show name) + file base
-      # Skip prepend if the base already starts with the show name (e.g. "Scrubs 7x02")
+      # Skip prepend if the base already starts with the show name (e.g. "Show Name 7x02")
       parent && season_directory?(parent) ->
         show_name = grandparent || base
 
